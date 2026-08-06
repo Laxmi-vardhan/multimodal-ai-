@@ -17,7 +17,7 @@ export const supabase = (supabaseUrl && supabaseAnonKey && !supabaseUrl.includes
   : null;
 
 // Password hash for 'User@123456'
-const DEMO_PASSWORD_HASH = '$2b$10$KWwP47Wf7u7wMsiHW459Xe9kGuNWFPzR95C4XOd.6cEKmxhi5FWb.';
+const DEMO_PASSWORD_HASH = '$2b$10$tCgYpqOA38IN6yO.V7sFX.H1nv89FDEUq1fsh4PAd7Q.pERrimHye';
 
 // Local JSON store fallback engine
 const defaultData = {
