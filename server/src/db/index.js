@@ -17,16 +17,16 @@ export const supabase = (supabaseUrl && supabaseAnonKey && !supabaseUrl.includes
   : null;
 
 // Password hash for 'User@123456'
-const DEMO_PASSWORD_HASH = '$2a$10$eE1gKqE1k.xZ6ZpZ4ZpZ4u9xX.X.X.X.X.X.X.X.X.X.X.X.X.X.';
+const DEMO_PASSWORD_HASH = '$2b$10$KWwP47Wf7u7wMsiHW459Xe9kGuNWFPzR95C4XOd.6cEKmxhi5FWb.';
 
 // Local JSON store fallback engine
 const defaultData = {
   users: [
-    { id: 'u1', name: 'Alex Mercer', email: 'alex.business@omnifusion.ai', password_hash: '$2a$10$8uK5v7v6Yq2sYyL5bO7D7e1X2Y3Z4A5B6C7D8E9F0A1B2C3D4E5F6', avatar_url: '', created_at: new Date().toISOString() },
-    { id: 'u2', name: 'Dr. Elena Rostova', email: 'dr.elena@omnifusion.ai', password_hash: '$2a$10$8uK5v7v6Yq2sYyL5bO7D7e1X2Y3Z4A5B6C7D8E9F0A1B2C3D4E5F6', avatar_url: '', created_at: new Date().toISOString() },
-    { id: 'u3', name: 'Dr. Sarah Jenkins', email: 'dr.sarah@omnifusion.ai', password_hash: '$2a$10$8uK5v7v6Yq2sYyL5bO7D7e1X2Y3Z4A5B6C7D8E9F0A1B2C3D4E5F6', avatar_url: '', created_at: new Date().toISOString() },
-    { id: 'u4', name: 'Marcus Vance', email: 'marcus.legal@omnifusion.ai', password_hash: '$2a$10$8uK5v7v6Yq2sYyL5bO7D7e1X2Y3Z4A5B6C7D8E9F0A1B2C3D4E5F6', avatar_url: '', created_at: new Date().toISOString() },
-    { id: 'u5', name: 'Jordan Taylor', email: 'student.demo@omnifusion.ai', password_hash: '$2a$10$8uK5v7v6Yq2sYyL5bO7D7e1X2Y3Z4A5B6C7D8E9F0A1B2C3D4E5F6', avatar_url: '', created_at: new Date().toISOString() }
+    { id: 'u1', name: 'Alex Mercer', email: 'alex.business@omnifusion.ai', password_hash: DEMO_PASSWORD_HASH, avatar_url: '', created_at: new Date().toISOString() },
+    { id: 'u2', name: 'Dr. Elena Rostova', email: 'dr.elena@omnifusion.ai', password_hash: DEMO_PASSWORD_HASH, avatar_url: '', created_at: new Date().toISOString() },
+    { id: 'u3', name: 'Dr. Sarah Jenkins', email: 'dr.sarah@omnifusion.ai', password_hash: DEMO_PASSWORD_HASH, avatar_url: '', created_at: new Date().toISOString() },
+    { id: 'u4', name: 'Marcus Vance', email: 'marcus.legal@omnifusion.ai', password_hash: DEMO_PASSWORD_HASH, avatar_url: '', created_at: new Date().toISOString() },
+    { id: 'u5', name: 'Jordan Taylor', email: 'student.demo@omnifusion.ai', password_hash: DEMO_PASSWORD_HASH, avatar_url: '', created_at: new Date().toISOString() }
   ],
   files: [],
   chats: [],
