@@ -50,13 +50,16 @@ const MainLayout = ({ children }) => {
   );
 };
 
+import ErrorBoundary from './components/ErrorBoundary';
+
 function App() {
   return (
-    <AuthProvider>
-      <ToastProvider>
-        <Router>
-          <MainLayout>
-            <Routes>
+    <ErrorBoundary>
+      <AuthProvider>
+        <ToastProvider>
+          <Router>
+            <MainLayout>
+              <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Landing />} />
               <Route path="/login" element={<Login />} />
@@ -79,6 +82,7 @@ function App() {
         </Router>
       </ToastProvider>
     </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
