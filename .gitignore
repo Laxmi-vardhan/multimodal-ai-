@@ -10,7 +10,11 @@ client/dist-ssr/
 # Environment Variables & Secrets
 .env
 server/.env
+client/.env
 *.local
+!.env.example
+!server/.env.example
+!client/.env.example
 
 # Database & Local Store
 server/src/db/local_store.json

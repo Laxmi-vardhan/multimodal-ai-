@@ -9,7 +9,9 @@ const CATEGORIES = ['Education', 'Healthcare', 'Legal', 'Research', 'Business', 
 const UploadZone = ({ onUploadSuccess }) => {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [category, setCategory] = useState('Personal');
-  const [autoAnalyze, setAutoAnalyze] = useState(true);
+  const initialAutoAnalyze = import.meta.env.VITE_ENABLE_AUTO_ANALYZE !== 'false' && import.meta.env.VITE_ENABLE_AUTO_ANALYZE !== false;
+  const [autoAnalyze, setAutoAnalyze] = useState(initialAutoAnalyze);
+  const maxFileSizeMb = import.meta.env.VITE_MAX_FILE_SIZE_MB || 50;
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -118,7 +120,7 @@ const UploadZone = ({ onUploadSuccess }) => {
           Drag & Drop Multimodal Files Here
         </h3>
         <p className="text-sm text-slate-400 max-w-md mx-auto mb-4">
-          Supports PDFs, Text, PNG/JPEG Images, Audio (MP3/WAV), and Video (MP4/WEBM) up to 50MB.
+          Supports PDFs, Text, PNG/JPEG Images, Audio (MP3/WAV), and Video (MP4/WEBM) up to {maxFileSizeMb}MB.
         </p>
 
         <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/20">
