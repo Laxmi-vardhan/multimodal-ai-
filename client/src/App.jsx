@@ -16,11 +16,17 @@ import Search from './pages/Search';
 import History from './pages/History';
 import Reports from './pages/Reports';
 import Profile from './pages/Profile';
-import Settings from './pages/Settings';
+import Loader from './components/Loader';
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated, loading } = useAuth();
-  if (loading) return null;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh]">
+        <Loader text="Authenticating Workspace..." />
+      </div>
+    );
+  }
   if (!isAuthenticated) return <Navigate to="/login" replace />;
   return children;
 };

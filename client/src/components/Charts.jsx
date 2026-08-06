@@ -14,9 +14,10 @@ import {
 const COLORS = ['#6366F1', '#A855F7', '#EC4899', '#0EA5E9', '#10B981', '#F59E0B'];
 
 export const CategoryChart = ({ data = {} }) => {
-  const chartData = Object.keys(data).map((key) => ({
+  const safeData = data || {};
+  const chartData = Object.keys(safeData).map((key) => ({
     name: key,
-    value: data[key]
+    value: safeData[key]
   }));
 
   if (chartData.length === 0) {
@@ -50,9 +51,10 @@ export const CategoryChart = ({ data = {} }) => {
 };
 
 export const FileTypeChart = ({ data = {} }) => {
-  const chartData = Object.keys(data).map((key) => ({
+  const safeData = data || {};
+  const chartData = Object.keys(safeData).map((key) => ({
     type: key,
-    count: data[key]
+    count: safeData[key]
   }));
 
   if (chartData.length === 0) {
