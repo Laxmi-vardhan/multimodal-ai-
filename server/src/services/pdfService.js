@@ -49,8 +49,24 @@ export const generateReportPDF = (reportData, res) => {
 
   doc.moveDown(1.5);
 
+  const safeArray = (val) => {
+    if (Array.isArray(val)) return val;
+    if (typeof val === 'string') {
+      try {
+        const parsed = JSON.parse(val);
+        if (Array.isArray(parsed)) return parsed;
+      } catch (e) {}
+    }
+    return [];
+  };
+
+  const insights = safeArray(reportData.insights_json);
+  const flashcards = safeArray(reportData.flashcards_json);
+  const quiz = safeArray(reportData.quiz_json);
+  const keywords = safeArray(reportData.keywords);
+
   // Key Insights
-  if (reportData.insights_json && reportData.insights_json.length > 0) {
+  if (insights.length > 0) {
     doc
       .fillColor(primaryColor)
       .fontSize(16)
@@ -59,7 +75,7 @@ export const generateReportPDF = (reportData, res) => {
 
     doc.moveDown(0.5);
 
-    reportData.insights_json.forEach((insight, idx) => {
+    insights.forEach((insight, idx) => {
       doc
         .fillColor(secondaryColor)
         .fontSize(12)
@@ -76,7 +92,7 @@ export const generateReportPDF = (reportData, res) => {
   }
 
   // Actionable Items & Keywords
-  if (reportData.keywords && reportData.keywords.length > 0) {
+  if (keywords.length > 0) {
     doc
       .fillColor(primaryColor)
       .fontSize(14)
@@ -85,12 +101,12 @@ export const generateReportPDF = (reportData, res) => {
       .fillColor(darkTextColor)
       .font('Helvetica')
       .fontSize(11)
-      .text(reportData.keywords.join(', '));
+      .text(keywords.join(', '));
     doc.moveDown(1);
   }
 
   // Flashcards Section
-  if (reportData.flashcards_json && reportData.flashcards_json.length > 0) {
+  if (flashcards.length > 0) {
     doc
       .fillColor(primaryColor)
       .fontSize(16)
@@ -99,7 +115,7 @@ export const generateReportPDF = (reportData, res) => {
 
     doc.moveDown(0.5);
 
-    reportData.flashcards_json.forEach((card, i) => {
+    flashcards.forEach((card, i) => {
       doc
         .fillColor(primaryColor)
         .fontSize(11)
@@ -119,7 +135,7 @@ export const generateReportPDF = (reportData, res) => {
   }
 
   // Quiz Section
-  if (reportData.quiz_json && reportData.quiz_json.length > 0) {
+  if (quiz.length > 0) {
     doc
       .fillColor(primaryColor)
       .fontSize(16)
@@ -128,7 +144,7 @@ export const generateReportPDF = (reportData, res) => {
 
     doc.moveDown(0.5);
 
-    reportData.quiz_json.forEach((q, i) => {
+    quiz.forEach((q, i) => {
       doc
         .fillColor(darkTextColor)
         .fontSize(11)

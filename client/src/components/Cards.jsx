@@ -26,10 +26,11 @@ export const StatCard = ({ title, value, icon: Icon, color = 'indigo', subtitle 
 
 export const FileCard = ({ file, onView, onDelete }) => {
   const getIcon = () => {
-    if (file.mime_type.startsWith('image/')) return <ImageIcon className="w-5 h-5 text-sky-400" />;
-    if (file.mime_type.startsWith('audio/')) return <Music className="w-5 h-5 text-amber-400" />;
-    if (file.mime_type.startsWith('video/')) return <Video className="w-5 h-5 text-emerald-400" />;
-    if (file.mime_type === 'application/pdf') return <FileText className="w-5 h-5 text-rose-400" />;
+    const mime = file?.mime_type || '';
+    if (mime.startsWith('image/')) return <ImageIcon className="w-5 h-5 text-sky-400" />;
+    if (mime.startsWith('audio/')) return <Music className="w-5 h-5 text-amber-400" />;
+    if (mime.startsWith('video/')) return <Video className="w-5 h-5 text-emerald-400" />;
+    if (mime === 'application/pdf') return <FileText className="w-5 h-5 text-rose-400" />;
     return <FileText className="w-5 h-5 text-indigo-400" />;
   };
 
@@ -43,18 +44,18 @@ export const FileCard = ({ file, onView, onDelete }) => {
         <div className="flex items-center justify-between">
           <div className="p-2 rounded-xl bg-slate-900 border border-slate-800">{getIcon()}</div>
           <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">
-            {file.category || 'Personal'}
+            {file?.category || 'Personal'}
           </span>
         </div>
 
-        <h4 className="font-semibold text-sm text-slate-100 truncate" title={file.original_name}>
-          {file.original_name}
+        <h4 className="font-semibold text-sm text-slate-100 truncate" title={file?.original_name || 'File'}>
+          {file?.original_name || 'Untitled File'}
         </h4>
         <div className="flex items-center justify-between text-xs text-slate-500">
-          <span>{(file.file_size / (1024 * 1024)).toFixed(2)} MB</span>
+          <span>{((file?.file_size || 0) / (1024 * 1024)).toFixed(2)} MB</span>
           <span className="flex items-center gap-1">
             <Clock className="w-3 h-3" />
-            {new Date(file.created_at).toLocaleDateString()}
+            {file?.created_at ? new Date(file.created_at).toLocaleDateString() : 'Recent'}
           </span>
         </div>
       </div>

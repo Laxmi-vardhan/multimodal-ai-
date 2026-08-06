@@ -2,7 +2,9 @@ import { db } from '../db/index.js';
 
 export const searchFilesAndInsights = async (req, res, next) => {
   try {
-    const { query, category, mime_type } = req.body;
+    const query = req.body?.query || req.query?.query || '';
+    const category = req.body?.category || req.query?.category;
+    const mime_type = req.body?.mime_type || req.query?.mime_type;
     const q = (query || '').toLowerCase().trim();
 
     const userFiles = await db.getUserFiles(req.user.id);

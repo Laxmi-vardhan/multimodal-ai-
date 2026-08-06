@@ -4,7 +4,7 @@ import { generateReportPDF } from '../services/pdfService.js';
 
 export const generateReport = async (req, res, next) => {
   try {
-    const { file_ids, title, user_prompt, category } = req.body;
+    const { file_ids, title, user_prompt, userPrompt, category } = req.body;
 
     const allUserFiles = await db.getUserFiles(req.user.id);
     const selectedFiles = allUserFiles.filter(f => file_ids.includes(f.id));
@@ -16,7 +16,7 @@ export const generateReport = async (req, res, next) => {
     // Call Gemini Multimodal SDK
     const aiResult = await processMultimodalContent({
       files: selectedFiles,
-      userPrompt
+      userPrompt: user_prompt || userPrompt
     });
 
     const reportTitle = title || `Multimodal AI Synthesis — ${selectedFiles.map(f => f.original_name).join(', ')}`;
