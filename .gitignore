@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production Builds
+client/dist/
+client/dist-ssr/
+
+# Environment Variables & Secrets
+.env
+server/.env
+*.local
+
+# Database & Local Store
+server/src/db/local_store.json
+
+# Uploads Vault
+server/uploads/*
+!server/uploads/.gitkeep
+
+# System & OS Files
+.DS_Store
+Thumbs.db
+*.log
