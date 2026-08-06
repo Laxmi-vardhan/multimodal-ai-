@@ -5,7 +5,7 @@
   "main": "api/index.js",
   "type": "module",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
+    "build": "cd client && npm install && npm run build && cd .. && node -e \"fs.cpSync('client/dist', 'dist', { recursive: true })\"",
     "start": "node server/src/index.js"
   },
   "dependencies": {
