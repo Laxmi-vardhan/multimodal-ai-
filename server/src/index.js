@@ -64,7 +64,11 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 // Central Error Handler
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`🚀 OmniFusion AI Server running on http://localhost:${PORT}`);
-  console.log(`⚡ API Endpoints active: /api/auth, /api/upload, /api/chat, /api/search, /api/report, /api/history, /api/profile`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 OmniFusion AI Server running on http://localhost:${PORT}`);
+    console.log(`⚡ API Endpoints active: /api/auth, /api/upload, /api/chat, /api/search, /api/report, /api/history, /api/profile`);
+  });
+}
+
+export default app;
