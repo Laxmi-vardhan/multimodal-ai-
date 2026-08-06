@@ -3,12 +3,24 @@
   "version": "1.0.0",
   "description": "OmniFusion AI Multimodal Workspace",
   "main": "api/index.js",
+  "type": "module",
   "scripts": {
     "build": "cd client && npm install && npm run build",
     "start": "node server/src/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module"
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "@supabase/supabase-js": "^2.49.1",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pdfkit": "^0.16.0",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
+  }
 }
