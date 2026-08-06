@@ -96,7 +96,7 @@ export const processMultimodalContent = async ({ files = [], userPrompt = '', sy
 
   try {
     const ai = new GoogleGenAI({ apiKey });
-    const model = 'gemini-2.5-flash';
+    const model = 'gemini-2.5-flash-lite';
 
     const parts = [];
 
@@ -186,7 +186,7 @@ export const chatWithMultimodalContent = async ({ files = [], chatHistory = [], 
 
   try {
     const ai = new GoogleGenAI({ apiKey });
-    const model = 'gemini-2.5-flash';
+    const model = 'gemini-2.5-flash-lite';
 
     const parts = [];
 
