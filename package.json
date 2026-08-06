@@ -1,13 +1,14 @@
 {
-  "name": "new-multi-modal-ai",
+  "name": "omnifusion-ai",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "OmniFusion AI Multimodal Workspace",
+  "main": "api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd client && npm install && npm run build",
+    "start": "node server/src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }
