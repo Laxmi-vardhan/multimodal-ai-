@@ -14,7 +14,9 @@ const Navbar = () => {
           <Cpu className="w-5 h-5 text-white" />
         </div>
         <div>
-          <span className="text-xl font-extrabold tracking-tight gradient-text">OmniFusion</span>
+          <span className="text-xl font-extrabold tracking-tight gradient-text">
+            {import.meta.env.VITE_APP_NAME || 'OmniFusion AI'}
+          </span>
           <span className="ml-2 px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded-full">
             Multimodal AI
           </span>
