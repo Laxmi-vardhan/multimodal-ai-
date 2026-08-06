@@ -1,4 +1,4 @@
-# OmniFusion AI — Hackathon-Winning Multimodal AI Platform
+# OmniFusion AI — Multimodal AI Platform
 
 OmniFusion AI is a production-ready, full-stack Multimodal AI workspace that enables users to upload **PDFs, text files, high-resolution images, audio recordings, and videos**, then interact with all content simultaneously using **Google Gemini 2.5 Multimodal SDK**.
 
@@ -84,7 +84,7 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 
 ---
 
-## 🏆 Hackathon Demo Flow
+## 🚀 Quick Start Demo Flow
 
 1. **Register/Sign In** → Instant JWT session startup.
 2. **Upload Asset Vault** → Drag & Drop PDFs, high-res images, audio clips, or videos.

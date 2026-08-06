@@ -71,7 +71,7 @@ const Landing = () => {
       <section className="max-w-5xl mx-auto px-4">
         <div className="p-10 rounded-3xl gradient-bg-primary text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 to-transparent pointer-events-none"></div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold">Ready to Win the AI Hackathon?</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold">Ready to Transform Your Workflows?</h2>
           <p className="text-indigo-100 max-w-xl mx-auto text-sm sm:text-base">
             Join OmniFusion AI today and experience zero-friction multimodal file intelligence.
           </p>
