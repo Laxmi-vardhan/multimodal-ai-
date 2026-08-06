@@ -16,6 +16,7 @@ import Search from './pages/Search';
 import History from './pages/History';
 import Reports from './pages/Reports';
 import Profile from './pages/Profile';
+import Settings from './pages/Settings';
 import Loader from './components/Loader';
 
 const ProtectedRoute = ({ children }) => {
