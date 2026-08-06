@@ -5,10 +5,24 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('omnifusion_user');
-    return saved ? JSON.parse(saved) : null;
+    try {
+      const saved = localStorage.getItem('omnifusion_user');
+      return (saved && saved !== 'undefined') ? JSON.parse(saved) : null;
+    } catch (e) {
+      console.warn('Failed to parse saved user from localStorage:', e);
+      return null;
+    }
   });
-  const [token, setToken] = useState(() => localStorage.getItem('omnifusion_token'));
+
+  const [token, setToken] = useState(() => {
+    try {
+      const saved = localStorage.getItem('omnifusion_token');
+      return (saved && saved !== 'undefined') ? saved : null;
+    } catch (e) {
+      return null;
+    }
+  });
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
