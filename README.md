@@ -84,9 +84,21 @@ SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 
 ---
 
+## 🔑 Pre-Created Demo Test Credentials
+
+| Domain Role | Email Address | Password |
+|---|---|---|
+| Business & Operations | `alex.business@omnifusion.ai` | `User@123456` |
+| Research & AI | `dr.elena@omnifusion.ai` | `User@123456` |
+| Healthcare & Medical | `dr.sarah@omnifusion.ai` | `User@123456` |
+| Legal & Compliance | `marcus.legal@omnifusion.ai` | `User@123456` |
+| Education & Academic | `student.demo@omnifusion.ai` | `User@123456` |
+
+---
+
 ## 🚀 Quick Start Demo Flow
 
-1. **Register/Sign In** → Instant JWT session startup.
+1. **Register/Sign In** → Instant JWT session startup using demo credentials or registration.
 2. **Upload Asset Vault** → Drag & Drop PDFs, high-res images, audio clips, or videos.
 3. **Multimodal AI Synthesis** → Watch Gemini automatically produce structured summaries, 3D flashcards, and quizzes.
 4. **Cross-File Chat** → Ask complex questions referencing multiple attached documents at once.
